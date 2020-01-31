@@ -4,11 +4,11 @@
 multiplier=${1:-"1.0"}
 N=${2:-50}
 worker=${3:-"[::1]:7076"}
-hash=`cat /dev/urandom | tr -dc 'A-E0-9' | fold -w 64 | head -n 1`
 
 printf "\n${N} requests @ ${multiplier} multiplier\nworker at ${worker}\n\n"
 
 function pow {
+  hash=`cat /dev/urandom | tr -dc 'A-E0-9' | fold -w 64 | head -n 1`
   curl $worker -s -d """{\"action\":\"work_generate\", \"hash\":\""${hash}"\", \"multiplier\": \""${multiplier}"\"}""" > /dev/null
 }
 
