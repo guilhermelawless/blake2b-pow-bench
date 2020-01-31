@@ -25,9 +25,9 @@ function run () {
   printf "\n\n"
 }
 
-START=$(date +%s.%N)
+START=$(date +%s)
 run $N
-END=$(date +%s.%N)
-DIFF=$(echo "$END - $START" | bc)
+END=$(date +%s)
+DIFF=`expr $END - $START`
 
 echo "Took $DIFF seconds"
