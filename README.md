@@ -2,6 +2,8 @@
 
 ## Usage
 
+First, run a node (useful to benchmark with work peers), or a standalone work server.
+
 Included are binaries of [nano-work-server](https://github.com/nanocurrency/nano-work-server) in `bin/`. Run a work server as:
 
 ```bash
@@ -10,17 +12,17 @@ Included are binaries of [nano-work-server](https://github.com/nanocurrency/nano
 
 For other options such as not using a GPU use `--help`.
 
-Once online, the benchmark can be started:
-
+Once started, the benchmark can be started:
 
 ```bash
-./benchmark.sh MULTIPLIER N WORKER_URI
+./benchmark.sh MULTIPLIER N WORKER_URI USE_PEERS
 ```
 
-All values are optional:
+All values are optional but sequential:
 - `multiplier` defaults to 1.0 (make sure the base difficulty of the server is correct)
 - `N` defaults to 50 and is the number of requests to perform
 - `worker_uri` defaults to `[::1]:7076`
+- `use_peers` defaults to `true`
 
 ## Using for low multipliers
 
