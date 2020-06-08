@@ -15,15 +15,11 @@ For other options such as not using a GPU use `--help`.
 Once started, the benchmark can be started:
 
 ```bash
-./benchmark.sh MULTIPLIER N WORKER_URI USE_PEERS
+./benchmark.sh multiplier N worker_uri [use_peers=true] [simultaneous_processes=1]
 ```
-
-All values are optional but sequential:
-- `multiplier` defaults to 1.0 (make sure the base difficulty of the server is correct)
-- `N` defaults to 50 and is the number of requests to perform
-- `worker_uri` defaults to `[::1]:7076`
-- `use_peers` defaults to `true`
 
 ## Using for low multipliers
 
-The benchmark is sequential, meaning network latency must be taken into account for low multipliers, if using a remote work server. 
+Use `simultaneous_processes` with a value of `5` or higher to launch many simultaneous processes, minimizing the effect of latency.
+
+**Note**: if `simultaneous_processes` is higher than `1`, it will not be possible to stop the benchmark without closing the window (SIGINT is not handled correctly).
