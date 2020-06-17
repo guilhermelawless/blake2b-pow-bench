@@ -2,9 +2,7 @@
 
 ## Usage
 
-First, run a node (useful to benchmark with work peers), or a standalone work server.
-
-Included are binaries of [nano-work-server](https://github.com/nanocurrency/nano-work-server) in `bin/`. Run a work server as:
+First, run a node (useful to benchmark with work peers), or a standalone [work server](https://github.com/nanocurrency/nano-work-server/releases/latest).
 
 ```bash
 ./nano-work-server --gpu 0:0 --cpu-threads 0 --listen-address [::1]:7076
